@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Калькулятор расчета стоимости окна ОК v.1.0</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+	<link href="wcalc.v1/wcalc.css" rel="stylesheet" type="text/css">
+	<link href="wcalc.v1/jquery/css/ui-lightness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css">
+	<script src="wcalc.v1/jquery/js/jquery-1.3.2.min.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/jquery/js/jquery-ui-1.7.2.custom.min.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/wcalc.params.js" language="javascript" type="text/javascript"></script>
+	
+	<!--ПОТОМ УДАЛИТЬ<script src="wcalc.v1/wcalc.prices.js" language="javascript" type="text/javascript"></script>-->
+	
+	<script src="wcalc.v1/wcalc.db.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/wcalc.handlers.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/wcalc.calculate.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/wcalc.js" language="javascript" type="text/javascript"></script>
+	<script src="wcalc.v1/dialogs/SelectProductConfiguration.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="wcalc">
+
+	<div class="buffer"></div>
+
+	<div id="wcalcDialogSelectProductConfiguration">
+		<table class="layout" width="100%" height="361px">
+			<tr>
+				<td>
+					<div class="configurations">
+						<div class="template">
+							<a href="javascript:void(0)"><img class="preview" alt="" border="0"></a>
+						</div>					
+					</div>	
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="title">Калькулятор расчета стоимости окна</div>
+	
+	<table class="body layout" width="100%">
+		<tr>
+			<td class="left" valign="top">
+						
+							<fieldset>
+								<legend>Параметры изделия</legend>
+			
+				<table class="layout" width="100%">
+					<tr>
+						<td valign="top">
+						
+								<div class="ViewProducts">
+									<table class="param layout" width="100%">
+										<tr>
+											<td class="label">Вид изделия:</td>
+											<td><select></select></td>
+										</tr>
+									</table>
+								</div>
+								<div class="SystemProfilesAndAccessories">
+									<table class="param layout" width="100%">
+										<tr>
+											<td class="label">Профиль + фурнитура:</td>
+											<td><select></select></td>
+										</tr>
+									</table>
+								</div>
+								<div class="SizeProducts">
+									<table class="param layout" width="100%">
+										<tr>
+											<td class="label">Размеры изделия:</td>
+											<td>
+												<input class="WidthProduct" type="text" name="" value="" size="5"> &#215
+												<input class="HeightProduct" type="text" name="" value="" size="5"> мм.
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="CountProducts">
+									<table class="param layout" width="100%">
+										<tr>
+											<td class="label">Количество изделий:</td>
+											<td><input type="text" name="" value="" size="5"> шт.</td>
+										</tr>
+									</table>
+								</div>						
+						
+						</td>
+						<td class="ProductConfigurations" valign="top" style="display: none;">
+						
+							<fieldset class="ProductConfigurations">
+								<legend>Конфигурация изделия</legend>
+								<div><img class="preview" alt="" border="0"></div>
+								<input class="DialogSelect" type="submit" value="Выбрать...">
+							</fieldset>						
+						
+						</td>
+					</tr>
+				</table>
+				
+							</fieldset>
+			
+				<fieldset>
+					<legend>Дополнительно</legend>
+					<div class="Components">
+						<table class="param layout" width="100%">
+							<tr>
+								<td class="label">Комплектующие:</td>
+								<td>
+									<select></select>
+									<span class="size" style="display: none;">
+										<input type="text" name="" value="" size="5">
+										<span class="unit"></span>
+									</span>
+									<span class="count" style="display: none;">
+										<input type="text" name="" value="1" size="5">
+										<span class="unit">шт.</span>
+									</span>
+									<input class="add" type="submit" value="Добавить &#8594;">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="Services">
+						<table class="param layout" width="100%">
+							<tr>
+								<td class="label">Услуги:</td>
+								<td>
+									<select></select>
+									<input class="count" type="text" name="" value="1" size="5" style="display: none;">
+									<span class="unit" style="display: none;">шт.</span>
+									<input class="add" type="submit" value="Добавить &#8594;">								
+								</td>
+							</tr>
+						</table>
+					</div>
+				</fieldset>
+				
+			</td>
+			<td class="right" valign="top">
+				
+				<div class="output">
+				
+					<fieldset>
+						<legend>Расчет изделий</legend>
+						
+						<div class="paper">
+				
+							<div class="CommercialOfferTitle">Коммерческое предложение</div>
+							
+							<div class="CommercialOfferText">
+								Уважаемый Заказчик, предлагаем Вам рассмотреть коммерческое предложение по расчету 
+								стоимости изделий, с учетом дополнительных комплектующих и услуг, Обращаем Ваше 
+								внимание на то, что стоимость заказа является ориентировочной, более точную цену 
+								Вы можете узнать у менеджера по продажам.
+							</div>
+							
+							<div class="PriceProducts">
+								Стоимость изделий составляет:
+								<span class="value">0</span>
+								<span class="currency"></span>
+							</div>
+							
+							<div class="PriceComponents">
+								<div class="caption">Дополнительные комплектующие:</div>
+								<div class="list">
+									<div class="template">
+										<span class="caption"></span>
+										(<span class="rem"></span>)
+										<span class="price"></span>
+										<a class="delete" href="javascript:void(0)" title="Удалить">&#215</a>
+									</div>
+								</div>
+								<div class="price">
+									Стоимость комплектующих составляет:
+									<span class="value">0</span>
+									<span class="currency"></span>
+								</div>
+							</div>
+							
+							<div class="PriceServices">
+								<div class="caption">Дополнительные услуги:</div>
+								<div class="list">
+									<div class="template">
+										<span class="caption"></span>
+										(<span class="rem"></span>)
+										<span class="price"></span>
+										<a class="delete" href="javascript:void(0)" title="Удалить">&#215</a>
+									</div>
+								</div>
+								<div class="price">
+									Стоимость услуг составляет:
+									<span class="value">0</span>
+									<span class="currency"></span>
+								</div>
+							</div>
+							
+							<div class="PriceTotal">
+								Итого:
+								<span class="value">0</span>
+								<span class="currency"></span>
+							</div>
+						
+						</div>
+						
+					</fieldset>
+				
+				</div>
+			
+			</td>
+		</tr>
+	</table>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+
+body {
+	background-color: #f4f4f4;
+}
+
+table.layout { border-collapse: collapse; border: 0px; }
+table.layout td, table.layout th { padding: 0px; margin: 0px; }
+
+div.wcalc div.buffer {
+	display: none;
+}
+
+div.wcalc div.title {
+	font-size: 150%;
+	margin: 0px 0px 20px 0px;
+}
+
+div.wcalc table.body td.left {
+	
+}
+
+div.wcalc table.body td.right {
+	width: 430px;
+}
+
+div.wcalc table.param td.label {
+	width: 165px;
+}
+
+/* Шаблоны отдельных блоков */
+
+div.wcalc div.ViewProducts select,
+div.wcalc div.SystemProfilesAndAccessories select {
+	width2: 100%;
+}
+
+#wcalcDialogSelectProductConfiguration div.template {
+	display: none;
+}
+
+#wcalcDialogSelectProductConfiguration div.item {
+	display: inline; 
+	float: left; 
+	height: 1%;
+	padding: 0px 10px 10px 0px;
+}
+
+/* Коммерческое предложение output */
+
+div.wcalc div.output {
+	padding: 0px;
+}
+
+div.wcalc div.output div.paper {
+	border: 1px solid black;
+	padding: 25px;
+	background-color: white;
+	height: 500px;
+	font-size: 80%;
+}
+
+div.wcalc div.output div.CommercialOfferTitle {
+	font-size: 150%;
+	margin: 0px 0px 10px 0px;
+}
+
+div.wcalc div.output div.CommercialOfferText {
+	margin: 0px 0px 10px 0px;
+}
+
+div.wcalc div.output div.PriceProducts {
+	font-weight: bold;
+	margin: 0px 0px 10px 0px;
+	display: none;
+}
+
+div.wcalc div.output div.PriceComponents {
+	margin: 0px 0px 10px 0px;
+	display: none;
+}
+
+div.wcalc div.output a.delete,
+div.wcalc div.output a.delete:link,
+div.wcalc div.output a.delete:visited,
+div.wcalc div.output a.delete:active,
+div.wcalc div.output a.delete:hover {
+	font-family: Symbol;
+	font-weight: bold;
+	color: silver;
+	text-decoration: none;
+}
+
+div.wcalc div.output a.delete:hover {
+	color: red;
+}
+
+div.wcalc div.output div.PriceComponents div.list div.template {
+	display: none;
+}
+
+div.wcalc div.output div.PriceComponents div.price {
+	font-weight: bold;
+}
+
+div.wcalc div.output div.PriceServices {
+	margin: 0px 0px 10px 0px;
+	display: none;
+}
+
+div.wcalc div.output div.PriceServices div.list div.template {
+	display: none;
+}
+
+div.wcalc div.output div.PriceServices div.price {
+	font-weight: bold;
+}
+
+div.wcalc div.output div.PriceTotal {
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+}
